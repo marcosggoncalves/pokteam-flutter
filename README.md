@@ -47,4 +47,10 @@ A arquitetura do projeto segue o padrão **Clean Architecture**, que organiza o 
 5. O **Caso de Uso** passa os dados para a **Camada de Apresentação**, que notifica a UI através do `ChangeNotifier`.
 6. A **UI** exibe os dados para o usuário.
 
+## Vídeo de Demonstração
+
+Confira o vídeo de demonstração do projeto:
+
+[Link para o vídeo no Loom](https://www.loom.com/share/19a3efab3a6647b0938141de5ae9a90e?sid=e0d52316-39bf-404c-82d8-4d07167b08b1)
+
  
