@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; 
+import 'package:provider/provider.dart';
 import 'package:todo_fteam/features/todo/presentation/providers/pokemon_provider.dart';
 import 'package:todo_fteam/features/todo/presentation/widgets/confirmation_dialog.dart';
 
@@ -87,9 +87,9 @@ class TodoScreen extends StatelessWidget {
             child: Consumer<PokemonProvider>(
               builder: (context, provider, _) {
                 if (provider.isLoading) {
-                  return Center(child: CircularProgressIndicator(
-                    color: Color(0xFF042449),
-                  ));
+                  return Center(
+                    child: CircularProgressIndicator(color: Color(0xFF042449)),
+                  );
                 }
                 if (provider.todoList.isEmpty) {
                   return Center(
@@ -106,7 +106,7 @@ class TodoScreen extends StatelessWidget {
                     final pokemon = provider.todoList[index];
                     return Card(
                       elevation: 4,
-                      color: Colors.white,
+                      color: pokemon.colorCard,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -128,9 +128,18 @@ class TodoScreen extends StatelessWidget {
                             fontSize: 16,
                           ),
                         ),
-                        subtitle: Text(
-                          'Habilidade: ${pokemon.ability}',
-                          style: TextStyle(fontSize: 14),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Habilidade: ${pokemon.ability}',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            Text(
+                              'Tipo: ${pokemon.type} ',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
                         ),
                         onTap: () {
                           showDialog(
