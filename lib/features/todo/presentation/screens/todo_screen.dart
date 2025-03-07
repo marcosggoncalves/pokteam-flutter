@@ -23,7 +23,7 @@ class TodoScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
               color: Color(0xFF042449),
               borderRadius: BorderRadius.only(
@@ -61,6 +61,7 @@ class TodoScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       final name = _controller.text.trim().toLowerCase();
+
                       if (name.isNotEmpty) {
                         context.read<PokemonProvider>().addPokemonToList(
                           name,
